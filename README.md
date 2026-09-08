@@ -32,10 +32,6 @@ binding generation, native library builds, and cross-platform compilation.
 
 - [`v_imgui_examples`](https://github.com/antono2/v_imgui_examples) — tested
   GLFW/Vulkan Dear ImGui example.
-- [`v_find_duplicates`](https://github.com/antono2/v_find_duplicates) — fast
-  duplicate file and directory finder.
-- [`vlang.kak`](https://github.com/antono2/vlang.kak) — V language support for
-  the Kakoune editor.
 
 ## Current build health
 
