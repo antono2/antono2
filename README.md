@@ -16,10 +16,10 @@ H.264 playback, and OpenCL/Vulkan interoperability.
 | Vulkan API | [`vulkan`](https://github.com/antono2/vulkan) | Generated Vulkan and Vulkan Video bindings with an opt-in ergonomic API |
 | Generation | [`v_vulkan_bindings`](https://github.com/antono2/v_vulkan_bindings) | Reproducible generation from Khronos `vk.xml` |
 
-The current `vulkan` release is **v1.7.0**, generated from Vulkan registry
-v1.4.362. It supports V 0.5.2 across GCC, TinyCC, Clang, and MSVC, and adds
-typed lifecycle, device, queue, memory, buffer, and command-pool helpers
-without hiding the complete generated API.
+The `vulkan` module keeps the complete generated API accessible while adding
+opt-in typed lifecycle, device, queue, memory, buffer, and command-pool helpers.
+See its releases and compatibility notes for the current registry and compiler
+matrix.
 
 ## OpenCL stack
 
@@ -29,9 +29,16 @@ without hiding the complete generated API.
 | Generation | [`v_opencl_bindings`](https://github.com/antono2/v_opencl_bindings) | Registry-driven generator, validation pipeline, and canonical source |
 | Interop example | [`opencl/examples/vulkan_particles`](https://github.com/antono2/opencl/tree/master/examples/vulkan_particles) | OpenCL compute with Vulkan presentation, shared memory, and semaphore synchronization |
 
-The current `opencl` release is **v0.4.1**. The Vulkan particle example uses
-zero-copy external-memory interoperability on UUID-matched devices when the
-required extensions are available, with a portable host-staged fallback.
+The Vulkan particle example uses zero-copy external-memory interoperability on
+UUID-matched devices when the required extensions are available, with a
+portable host-staged fallback.
+
+## Reusable memory building blocks
+
+[`memory`](https://github.com/antono2/memory) provides checked object and slot
+pools, plus range, linear, ring, and buddy allocators for V. Its general-purpose
+core does not depend on Vulkan; optional examples show how the allocators can
+support GPU suballocation.
 
 ## Examples and build health
 
