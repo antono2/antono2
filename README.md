@@ -35,7 +35,7 @@ recorded IDE walkthrough and documents Linux setup, recovery, and limitations.
 | Layer | Project | Purpose |
 | --- | --- | --- |
 | Application | [`v_vulkan_video`](https://github.com/antono2/v_vulkan_video) | Hardware-accelerated H.264/MP4 playback and Vulkan presentation |
-| Video formats | [`h264`](https://github.com/antono2/h264) · [`minimp4`](https://github.com/antono2/minimp4) | Bitstream parsing, picture ordering, and MP4 container access |
+| Video formats | [`h264`](https://github.com/antono2/h264) · [`minimp4`](https://github.com/antono2/minimp4) | Bitstream syntax, parameter metadata, and MP4 container access |
 | UI and windowing | [`imgui`](https://github.com/antono2/imgui) · [`glfw`](https://github.com/antono2/glfw) | Dear ImGui/ImPlot and focused GLFW bindings |
 | Resource management | [`vulkan_memory_allocator`](https://github.com/antono2/vulkan_memory_allocator) (`vkmemalloc`) | V-native, budget-aware memory placement, block suballocation, upload rings, and diagnostics |
 | Vulkan API | [`vulkan`](https://github.com/antono2/vulkan) | Generated Vulkan and Vulkan Video bindings with an opt-in ergonomic API |
@@ -75,7 +75,7 @@ GPU block suballocation; it is not a binding to AMD's Vulkan Memory Allocator.
 ## Examples and build health
 
 - [`v_imgui_examples`](https://github.com/antono2/v_imgui_examples) — tested
-  GLFW/Vulkan Dear ImGui example.
+  GLFW/Vulkan demo, widget gallery, ImPlot dashboard and Android examples.
 
 [![Vulkan bindings](https://github.com/antono2/vulkan/actions/workflows/generated-bindings-ci.yml/badge.svg)](https://github.com/antono2/vulkan/actions)
 [![Vulkan generator](https://github.com/antono2/v_vulkan_bindings/actions/workflows/update_bindings_and_push_to_vulkan.yml/badge.svg)](https://github.com/antono2/v_vulkan_bindings/actions)
@@ -91,3 +91,17 @@ the shortest path to a working build.
 The software and its documentation remain freely available. If you would like
 to support continued work on the game, developer tools, bindings, tests, and
 documentation, visit [oreskin.de/support](https://oreskin.de/dono_en.php).
+
+## Choosing a starting point
+
+| Goal | Start here | Role |
+| --- | --- | --- |
+| Play a game | [Torus Trooper](https://github.com/antono2/torus_trooper) | Application with release downloads |
+| Study hardware video decoding | [Vulkan Video player](https://github.com/antono2/v_vulkan_video) | Application and implementation guide |
+| Build a graphical UI | [ImGui](https://github.com/antono2/imgui) and [examples](https://github.com/antono2/v_imgui_examples) | Library plus gallery, dashboard and platform examples |
+| Use graphics or compute APIs | [Vulkan](https://github.com/antono2/vulkan) or [OpenCL](https://github.com/antono2/opencl) | Published modules for applications |
+| Update generated API declarations | [Vulkan generator](https://github.com/antono2/v_vulkan_bindings) or [OpenCL generator](https://github.com/antono2/v_opencl_bindings) | Maintainer tools; regenerate before publishing |
+
+Start with each project's README for its supported platforms and setup path.
+Generated bindings expose an API surface; the installed driver still determines
+which GPU features are available at runtime.
