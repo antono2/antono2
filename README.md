@@ -72,6 +72,17 @@ core does not depend on Vulkan; synchronized range and buddy variants support
 shared allocation metadata. The V-native Vulkan allocator uses this core for
 GPU block suballocation; it is not a binding to AMD's Vulkan Memory Allocator.
 
+## Private infrastructure work
+
+Alongside the public projects, I develop `host`: V-based web and email services
+running oreskin.de and my email on my own Ubuntu VPS. The work includes
+HTTP/HTTPS, SMTP/IMAP, certificate management, automated website deployment,
+monitoring, and tested encrypted backup and recovery.
+
+The source remains private during extended stability and interoperability
+testing of these critical services. No publication date is set. See the
+[portfolio overview](https://oreskin.de/projects_en.php#host) for context.
+
 ## Examples and build health
 
 - [`v_imgui_examples`](https://github.com/antono2/v_imgui_examples) — tested
@@ -88,7 +99,7 @@ the shortest path to a working build.
 
 ## Support the work
 
-The software and its documentation remain freely available. If you would like
+The public projects and their documentation remain freely available. If you would like
 to support continued work on the game, developer tools, bindings, tests, and
 documentation, visit [oreskin.de/support](https://oreskin.de/dono_en.php).
 
