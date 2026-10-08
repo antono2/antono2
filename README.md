@@ -1,53 +1,53 @@
-# Games, GPU software, and developer tools in V
+# Games, GPU software and developer tools in V
 
 I'm Anton Oreskin, a software engineer and open-source maintainer. I build
 applications and their reusable foundations in the
 [V programming language](https://vlang.io): games, hardware-accelerated video,
-GPU interoperability, memory tools, and a development environment for Kakoune.
+GPU interoperability, memory tools and a development environment for Kakoune.
 
 ## Torus Trooper
 
 [`torus_trooper`](https://github.com/antono2/torus_trooper) is now public: a free
 tunnel-racing arcade shooter inspired by Kenta Cho's original, with its own
-spacecraft, courses, and Vulkan presentation for Windows and Linux.
+spacecraft, courses and Vulkan presentation for Windows and Linux.
 
-- Normal, Hard, and Extreme difficulty, high scores, and unlockable starting levels.
-- Customizable keyboard and controller input, graphics settings, and audio levels.
-- A replay library with custom names, sorting, and `.ttr` import/export.
+- Normal, Hard and Extreme difficulty, high scores, and unlockable starting levels.
+- Customizable keyboard and controller input, graphics settings and audio levels.
+- A replay library with custom names, sorting and `.ttr` import/export.
 
 [Download for Windows or Linux](https://github.com/antono2/torus_trooper/releases/latest).
 A Vulkan-capable graphics driver is required; the Linux package needs glibc 2.38
 or newer (for example Ubuntu 24.04). macOS is not officially supported.
 
 Explore the [gameplay preview and controls](https://github.com/antono2/torus_trooper#gameplay-preview),
-[source-build instructions](https://github.com/antono2/torus_trooper/blob/main/docs/technical-reference.md#desktop-build-requirements),
+[source-build instructions](https://github.com/antono2/torus_trooper/blob/main/docs/technical-reference.md#desktop-build-requirements)
 and [design guide](https://github.com/antono2/torus_trooper/blob/main/docs/learning-path.md).
 
 ## V development in Kakoune
 
 [`vlang.kak`](https://github.com/antono2/vlang.kak) combines VLS/kak-lsp language
-features with project navigation, diagnostics, testing, and local GDB debugging.
+features with project navigation, diagnostics, testing and local GDB debugging.
 Managed setup and updates preserve personal settings. The README includes a
-recorded IDE walkthrough and documents Linux setup, recovery, and limitations.
+recorded IDE walkthrough and documents Linux setup, recovery and limitations.
 
 ## Vulkan Video stack
 
 | Layer | Project | Purpose |
 | --- | --- | --- |
 | Application | [`v_vulkan_video`](https://github.com/antono2/v_vulkan_video) | Hardware-accelerated H.264/MP4 playback and Vulkan presentation |
-| Video formats | [`h264`](https://github.com/antono2/h264) · [`minimp4`](https://github.com/antono2/minimp4) | Bitstream syntax, parameter metadata, and MP4 container access |
+| Video formats | [`h264`](https://github.com/antono2/h264) · [`minimp4`](https://github.com/antono2/minimp4) | Bitstream syntax, parameter metadata and MP4 container access |
 | UI and windowing | [`imgui`](https://github.com/antono2/imgui) · [`glfw`](https://github.com/antono2/glfw) | Dear ImGui/ImPlot and focused GLFW bindings |
-| Resource management | [`vulkan_memory_allocator`](https://github.com/antono2/vulkan_memory_allocator) (`vkmemalloc`) | V-native, budget-aware memory placement, block suballocation, upload rings, and diagnostics |
+| Resource management | [`vulkan_memory_allocator`](https://github.com/antono2/vulkan_memory_allocator) (`vkmemalloc`) | V-native, budget-aware memory placement, block suballocation, upload rings and diagnostics |
 | Vulkan API | [`vulkan`](https://github.com/antono2/vulkan) | Generated Vulkan and Vulkan Video bindings with an opt-in ergonomic API |
 | Generation | [`v_vulkan_bindings`](https://github.com/antono2/v_vulkan_bindings) | Reproducible generation from Khronos `vk.xml` |
 
 The `vulkan` module keeps the complete generated API accessible while adding
-opt-in typed lifecycle, device, queue, memory, buffer, and command-pool helpers.
+opt-in typed lifecycle, device, queue, memory, buffer and command-pool helpers.
 See its releases and compatibility notes for the current registry and compiler
 matrix.
 
 The video player's [Linux prerelease](https://github.com/antono2/v_vulkan_video/releases/tag/v0.3.0-rc1)
-adds current-stack integration, H.264 correctness fixes, and hardware decode
+adds current-stack integration, H.264 correctness fixes and hardware decode
 comparisons against FFmpeg. It requires a driver with Vulkan Video H.264 decode;
 Windows hardware playback remains unverified. See each project's platform notes
 rather than assuming every application supports every CI target.
@@ -56,9 +56,9 @@ rather than assuming every application supports every CI target.
 
 | Layer | Project | Purpose |
 | --- | --- | --- |
-| Module | [`opencl`](https://github.com/antono2/opencl) | Generated OpenCL 1.0–3.0 API plus typed buffers, images, SVM, events, and kernels |
-| Generation | [`v_opencl_bindings`](https://github.com/antono2/v_opencl_bindings) | Registry-driven generator, validation pipeline, and canonical source |
-| Interop example | [`opencl/examples/vulkan_particles`](https://github.com/antono2/opencl/tree/master/examples/vulkan_particles) | OpenCL compute with Vulkan presentation, shared memory, and semaphore synchronization |
+| Module | [`opencl`](https://github.com/antono2/opencl) | Generated OpenCL 1.0–3.0 API plus typed buffers, images, SVM, events and kernels |
+| Generation | [`v_opencl_bindings`](https://github.com/antono2/v_opencl_bindings) | Registry-driven generator, validation pipeline and canonical source |
+| Interop example | [`opencl/examples/vulkan_particles`](https://github.com/antono2/opencl/tree/master/examples/vulkan_particles) | OpenCL compute with Vulkan presentation, shared memory and semaphore synchronization |
 
 The Vulkan particle example uses zero-copy external-memory interoperability on
 UUID-matched devices when the required extensions are available, with a
@@ -67,7 +67,7 @@ portable host-staged fallback.
 ## Reusable memory building blocks
 
 [`memory`](https://github.com/antono2/memory) provides checked object and slot
-pools, plus range, linear, ring, and buddy allocators for V. Its general-purpose
+pools, plus range, linear, ring and buddy allocators for V. Its general-purpose
 core does not depend on Vulkan; synchronized range and buddy variants support
 shared allocation metadata. The V-native Vulkan allocator uses this core for
 GPU block suballocation; it is not a binding to AMD's Vulkan Memory Allocator.
@@ -77,7 +77,7 @@ GPU block suballocation; it is not a binding to AMD's Vulkan Memory Allocator.
 Alongside the public projects, I develop `host`: V-based web and email services
 running oreskin.de and my email on my own Ubuntu VPS. The work includes
 HTTP/HTTPS, SMTP/IMAP, certificate management, automated website deployment,
-monitoring, and tested encrypted backup and recovery.
+monitoring and tested encrypted backup and recovery.
 
 The source remains private during extended stability and interoperability
 testing of these critical services. No publication date is set. See the
@@ -94,13 +94,13 @@ testing of these critical services. No publication date is set. See the
 [![ImGui](https://github.com/antono2/imgui/actions/workflows/demo-release.yml/badge.svg)](https://github.com/antono2/imgui/actions)
 [![OpenCL](https://github.com/antono2/opencl/actions/workflows/test.yml/badge.svg)](https://github.com/antono2/opencl/actions)
 
-Each project README documents its supported scope, native dependencies, and
+Each project README documents its supported scope, native dependencies and
 the shortest path to a working build.
 
 ## Support the work
 
 The public projects and their documentation remain freely available. If you would like
-to support continued work on the game, developer tools, bindings, tests, and
+to support continued work on the game, developer tools, bindings, tests and
 documentation, visit [oreskin.de/support](https://oreskin.de/dono_en.php).
 
 ## Choosing a starting point
