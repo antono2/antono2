@@ -97,6 +97,30 @@ testing of these critical services. No publication date is set. See the
 Each project README documents its supported scope, native dependencies and
 the shortest path to a working build.
 
+## Windows and Linux support
+
+Windows builds are native unless a row explicitly calls for WSL. A passing
+binding or package build establishes build compatibility; device extensions
+and interactive graphics need separate runtime validation.
+
+| Projects | Windows evidence and setup | Linux evidence and setup |
+| --- | --- | --- |
+| [Torus Trooper](https://github.com/antono2/torus_trooper/blob/main/docs/technical-reference.md#desktop-build-requirements) | Release package, simulation/runtime tests and Vulkan probe; source builds use the documented V3/MinGW toolchain | Release package, simulation/runtime tests and Vulkan probe; source builds use the documented compiler and distribution packages |
+| [Vulkan Video player](https://github.com/antono2/v_vulkan_video/blob/master/QUICKSTART.md) | Native builds, player tests, package checks and device enumeration; hardware H.264 decode remains unverified | Native builds and tests, plus hardware decode comparisons; requires Vulkan Video H.264 driver support |
+| [ImGui](https://github.com/antono2/imgui/blob/master/QUICKSTART.md) and [examples](https://github.com/antono2/v_imgui_examples) | Native library/demo builds and packages; CMake, Visual Studio C++ tools and Vulkan SDK | Native builds and rendering smoke tests; CMake, distribution graphics packages and Vulkan runtime |
+| [Vulkan](https://github.com/antono2/vulkan), [GLFW](https://github.com/antono2/glfw), [VMA](https://github.com/antono2/vulkan_memory_allocator) | Binding/helper tests and native compile probes; matching SDK and native libraries are required | Binding/helper tests and runtime probes; matching development packages are required |
+| [OpenCL](https://github.com/antono2/opencl) and [its generator](https://github.com/antono2/v_opencl_bindings) | Loader ABI compilation; OpenCL development headers and a vendor runtime are separate prerequisites; GPU execution/interop is not established by this Windows compile job | ABI and runtime tests; device capabilities determine whether examples can use GPU/interop features |
+| [H.264](https://github.com/antono2/h264), [MP4](https://github.com/antono2/minimp4), [memory](https://github.com/antono2/memory) | Native V test suites | Native V test suites |
+| [Vulkan generator](https://github.com/antono2/v_vulkan_bindings) | Native PowerShell generation entry point and registry-generation CI | Shell generation entry point and registry-generation CI |
+| [vlang.kak](https://github.com/antono2/vlang.kak) and [muacme](https://github.com/antono2/muacme) | Use a Linux/WSL environment for their POSIX tools; no native Windows setup claim | Documented Linux/POSIX workflows |
+
+Use the compiler revisions recorded by each project: the applications currently
+test different compiler paths, so an arbitrary V release is not a universal
+replacement. For the game, use the release download if you only want to play.
+For GPU libraries, check both development dependencies and the installed driver.
+Historical forks and archived scratch repositories do not carry the same active
+support expectations as the projects listed above.
+
 ## Support the work
 
 The public projects and their documentation remain freely available. If you would like
