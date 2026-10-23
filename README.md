@@ -112,7 +112,7 @@ and interactive graphics need separate runtime validation.
 | [OpenCL](https://github.com/antono2/opencl) and [its generator](https://github.com/antono2/v_opencl_bindings) | Loader ABI compilation; OpenCL development headers and a vendor runtime are separate prerequisites; GPU execution/interop is not established by this Windows compile job | ABI and runtime tests; device capabilities determine whether examples can use GPU/interop features |
 | [H.264](https://github.com/antono2/h264), [MP4](https://github.com/antono2/minimp4), [memory](https://github.com/antono2/memory) | Native V test suites | Native V test suites |
 | [Vulkan generator](https://github.com/antono2/v_vulkan_bindings) | Native PowerShell generation entry point and registry-generation CI | Shell generation entry point and registry-generation CI |
-| [vlang.kak](https://github.com/antono2/vlang.kak) and [muacme](https://github.com/antono2/muacme) | Use a Linux/WSL environment for their POSIX tools; no native Windows setup claim | Documented Linux/POSIX workflows |
+| [vlang.kak](https://github.com/antono2/vlang.kak) | Use a Linux/WSL environment for their POSIX tools; no native Windows setup claim | Documented Linux/POSIX workflows |
 
 Use the compiler revisions recorded by each project: the applications currently
 test different compiler paths, so an arbitrary V release is not a universal
