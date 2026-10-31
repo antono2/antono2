@@ -46,7 +46,7 @@ opt-in typed lifecycle, device, queue, memory, buffer and command-pool helpers.
 See its releases and compatibility notes for the current registry and compiler
 matrix.
 
-The video player's [Linux prerelease](https://github.com/antono2/v_vulkan_video/releases/tag/v0.3.0-rc1)
+The video player's [Linux prerelease](https://github.com/antono2/v_vulkan_video/releases/tag/v0.3.0-rc2)
 adds current-stack integration, H.264 correctness fixes and hardware decode
 comparisons against FFmpeg. It requires a driver with Vulkan Video H.264 decode;
 Windows hardware playback remains unverified. See each project's platform notes
