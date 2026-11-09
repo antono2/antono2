@@ -79,7 +79,7 @@ API. Builds and silent tests pass on Linux, macOS and Windows; native playback
 has been checked through an isolated Linux loopback. Physical macOS/Windows
 audio output remains unverified.
 
-[Hear the spatial example and explore the library](https://oreskin.de/projects_en.php#audio).
+[Explore the library and runnable examples](https://oreskin.de/projects_en.php#audio).
 
 ## Reusable memory building blocks
 
