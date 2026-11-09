@@ -1,6 +1,6 @@
 # Games, GPU software and developer tools in V
 
-I'm Anton Oreskin, a software engineer and open-source maintainer. I build
+I'm a software engineer and open-source maintainer. I build
 applications and their reusable foundations in the
 [V programming language](https://vlang.io): games, hardware-accelerated video,
 GPU interoperability, memory tools and a development environment for Kakoune.
