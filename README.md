@@ -3,7 +3,8 @@
 I'm a software engineer and open-source maintainer. I build
 applications and their reusable foundations in the
 [V programming language](https://vlang.io): games, hardware-accelerated video,
-GPU interoperability, memory tools and a development environment for Kakoune.
+GPU interoperability, audio playback, memory tools and a development environment
+for Kakoune.
 
 ## Torus Trooper
 
@@ -64,6 +65,22 @@ The Vulkan particle example uses zero-copy external-memory interoperability on
 UUID-matched devices when the required extensions are available, with a
 portable host-staged fallback.
 
+## Audio playback for V
+
+[`audio`](https://github.com/antono2/audio) provides decoded or streamed WAV/Ogg
+playback, 3D sound positioning, reusable voices and a silent backend for tests.
+Native playback comes from miniaudio, with stb_vorbis for Ogg Vorbis decoding;
+the project adds the V interface, ownership rules, helpers and examples.
+
+Install from [VPM as `antono2.audio`](https://vpm.vlang.io/packages/antono2.audio),
+then follow the [native build instructions](https://github.com/antono2/audio/blob/main/BUILDING.md).
+[Release 0.1.0](https://github.com/antono2/audio/releases/tag/v0.1.0) is an early
+API. Builds and silent tests pass on Linux, macOS and Windows; native playback
+has been checked through an isolated Linux loopback. Physical macOS/Windows
+audio output remains unverified.
+
+[Hear the spatial example and explore the library](https://oreskin.de/projects_en.php#audio).
+
 ## Reusable memory building blocks
 
 [`memory`](https://github.com/antono2/memory) provides checked object and slot
@@ -111,6 +128,7 @@ and interactive graphics need separate runtime validation.
 | [Vulkan](https://github.com/antono2/vulkan), [GLFW](https://github.com/antono2/glfw), [VMA](https://github.com/antono2/vulkan_memory_allocator) | Binding/helper tests and native compile probes; matching SDK and native libraries are required | Binding/helper tests and runtime probes; matching development packages are required |
 | [OpenCL](https://github.com/antono2/opencl) and [its generator](https://github.com/antono2/v_opencl_bindings) | Loader ABI compilation; OpenCL development headers and a vendor runtime are separate prerequisites; GPU execution/interop is not established by this Windows compile job | ABI and runtime tests; device capabilities determine whether examples can use GPU/interop features |
 | [H.264](https://github.com/antono2/h264), [MP4](https://github.com/antono2/minimp4), [memory](https://github.com/antono2/memory) | Native V test suites | Native V test suites |
+| [Audio](https://github.com/antono2/audio/blob/main/BUILDING.md) | MinGW native build and silent tests; physical audio output remains unverified | Native build, silent tests and isolated playback loopback checks |
 | [Vulkan generator](https://github.com/antono2/v_vulkan_bindings) | Native PowerShell generation entry point and registry-generation CI | Shell generation entry point and registry-generation CI |
 | [vlang.kak](https://github.com/antono2/vlang.kak) | Use a Linux/WSL environment for their POSIX tools; no native Windows setup claim | Documented Linux/POSIX workflows |
 
@@ -134,6 +152,7 @@ documentation, visit [oreskin.de/support](https://oreskin.de/dono_en.php).
 | Play a game | [Torus Trooper](https://github.com/antono2/torus_trooper) | Application with release downloads |
 | Study hardware video decoding | [Vulkan Video player](https://github.com/antono2/v_vulkan_video) | Application and implementation guide |
 | Build a graphical UI | [ImGui](https://github.com/antono2/imgui) and [examples](https://github.com/antono2/v_imgui_examples) | Library plus gallery, dashboard and platform examples |
+| Add sound to an application | [Audio](https://github.com/antono2/audio) | WAV/Ogg playback, spatial sound and silent tests |
 | Use graphics or compute APIs | [Vulkan](https://github.com/antono2/vulkan) or [OpenCL](https://github.com/antono2/opencl) | Published modules for applications |
 | Update generated API declarations | [Vulkan generator](https://github.com/antono2/v_vulkan_bindings) or [OpenCL generator](https://github.com/antono2/v_opencl_bindings) | Maintainer tools; regenerate before publishing |
 
