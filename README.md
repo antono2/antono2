@@ -79,6 +79,11 @@ API. Builds and silent tests pass on Linux, macOS and Windows; native playback
 has been checked through an isolated Linux loopback. Physical macOS/Windows
 audio output remains unverified.
 
+Explore the [native audio playground](https://github.com/antono2/v_imgui_examples/tree/master/examples/audio_playground):
+move a sound around the listener, adjust playback and volume, and follow the
+corresponding V API call. It connects `antono2.audio` to `antono2.imgui`, GLFW
+and Vulkan. [Build and run it locally](https://github.com/antono2/v_imgui_examples/blob/master/docs/audio-playground.md).
+
 [Explore the library and runnable examples](https://oreskin.de/projects_en.php#audio).
 
 ## Reusable memory building blocks
@@ -103,7 +108,8 @@ testing of these critical services. No publication date is set. See the
 ## Examples and build health
 
 - [`v_imgui_examples`](https://github.com/antono2/v_imgui_examples) — tested
-  GLFW/Vulkan demo, widget gallery, ImPlot dashboard and Android examples.
+  GLFW/Vulkan demo, widget gallery, ImPlot dashboard, native audio playground
+  and Android examples.
 
 [![Vulkan bindings](https://github.com/antono2/vulkan/actions/workflows/generated-bindings-ci.yml/badge.svg)](https://github.com/antono2/vulkan/actions)
 [![Vulkan generator](https://github.com/antono2/v_vulkan_bindings/actions/workflows/update_bindings_and_push_to_vulkan.yml/badge.svg)](https://github.com/antono2/v_vulkan_bindings/actions)
@@ -152,7 +158,7 @@ documentation, visit [oreskin.de/support](https://oreskin.de/dono_en.php).
 | Play a game | [Torus Trooper](https://github.com/antono2/torus_trooper) | Application with release downloads |
 | Study hardware video decoding | [Vulkan Video player](https://github.com/antono2/v_vulkan_video) | Application and implementation guide |
 | Build a graphical UI | [ImGui](https://github.com/antono2/imgui) and [examples](https://github.com/antono2/v_imgui_examples) | Library plus gallery, dashboard and platform examples |
-| Add sound to an application | [Audio](https://github.com/antono2/audio) | WAV/Ogg playback, spatial sound and silent tests |
+| Add sound to an application | [Audio](https://github.com/antono2/audio) and [native playground](https://github.com/antono2/v_imgui_examples/tree/master/examples/audio_playground) | WAV/Ogg playback, spatial sound, visual controls and silent tests |
 | Use graphics or compute APIs | [Vulkan](https://github.com/antono2/vulkan) or [OpenCL](https://github.com/antono2/opencl) | Published modules for applications |
 | Update generated API declarations | [Vulkan generator](https://github.com/antono2/v_vulkan_bindings) or [OpenCL generator](https://github.com/antono2/v_opencl_bindings) | Maintainer tools; regenerate before publishing |
 
